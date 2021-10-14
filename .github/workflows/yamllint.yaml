@@ -1,0 +1,13 @@
+name: yamllint
+on: push
+jobs:
+  yamllint:
+    name: Run yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        name: checkout
+      - name: run yamllint
+        run: |
+          yamllint --version
+          yamllint -c .github/workflows/.yamllint .circleci/ .github/
